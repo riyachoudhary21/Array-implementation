@@ -91,3 +91,37 @@ scanf("%s",str2);
 compare(str1,str2);     
 }
 
+1. Input the string from the user.                                                                 
+2. Set a variable length to store the length of the string                                     
+3. Initialize a variable flag=0                                                                     
+4. Now, compare the string with its reverse using a for loop from i=0 to ‘length’                             
+5. Set flag =1 if any element doesn’t match and break out of loop.                                     
+6. If flag=0 then print “The string is palindrome”, or if flag=1 then print “The string is not palindrome”.                                      
+CODE:-
+#include<stdio.h>
+#include<string.h>
+int main()
+{	
+    char st[100];
+    int len,c=0;
+    printf("Enter a string to check Palindrome: \n");
+    scanf("%s", st);
+    len=strlen(st);
+    int mid = (len/2);
+    for(int i=0; i<mid;i++)
+    {
+        if(st[i]==st[(len-1)-i])
+        {
+            c++;
+        }
+    }
+    if(c==mid){
+        printf("---___String is Palindrome___---");
+    }
+    else {
+        printf("Not A palindrome");
+    }
+    return 0;
+}
+
+
