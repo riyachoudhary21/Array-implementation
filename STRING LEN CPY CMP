@@ -1,0 +1,93 @@
+LENGTH
+1.	Initialise a string str
+2.	Declare an integer i in the while loop and execute the while loop till the last character in not equal to NULL ‘\0’.
+3.	In the while loop keep incrementing the value of i
+4.	Print the value of I
+CODE:-
+#include<stdio.h>
+ int stringlen(char ch[])
+ {
+    int i=0;
+    int wide=0;
+     while(ch[i]!='\0')
+     {
+         if(ch[i]==' '){
+             wide++;
+         }
+         i++;
+     }
+     printf("Number of blankspace = %d \n", wide);
+     return i;
+ }
+ int main()
+ {
+     char ch[100];
+     printf("Enter a word to calculate length \n");
+    gets(ch);
+     int len=stringlen(ch);
+     printf("The length of given string = %d", len);
+     return 0;
+}
+
+COPY
+The algorithm of the program is as follows 
+1. Input string from user and store it to some variable say ptr1  
+2. Declare another variable to store copy of first string in ptr2 
+3. Run a loop from 0 to end of string.  
+4. Inside the loop for each character in ptr1 copy to ptr2. Say ptr2[i]=ptr1[i] 
+5. Finally, after loop make sure the copied string ends with NULL character i.e., ptr2[ I ]= ‘\0’; 
+CODE:-
+#include <stdio.h> 
+#include <string.h> 
+void Stringcopy(char *ptr1,char *ptr2) 
+{ 
+    while(*ptr1 != '\0'){ 
+        *ptr2 =  *ptr1; 
+        *ptr1++; 
+        *ptr2++; 
+    } 
+     *ptr2='\0'; 
+}
+int main(){ 
+    char inputString[100],copyString[100]; 
+    printf("Enter a string : \n");    
+    gets(inputString); 
+    Stringcopy(inputString,copyString); 
+    printf("Copied string is: %s", copyString); 
+      return 0; 
+} 
+
+COMPARE
+The algorithm of the program is as follows 
+1. Input two strings from user. Store it in strings say str1 and str2. 
+2. Compare two strings character by character till an unmatched character is found or end of any string is reached. 
+3. If an unmatched character is found then strings are not equal. 
+4. Else if both strings reached their end then both strings are equal. 
+CODE:-
+#include <stdio.h> 
+#include <string.h> 
+int compare(char *str1,char *str2)   
+{   
+   while(*str1 == *str2) 
+    { 
+        if ( *str1 == '\0' || *str2 == '\0' )            
+      break; 
+        str1++;         
+       str2++;  
+    } 
+    if( *str1 == '\0' && *str2 == '\0' )         
+   printf("\n\nBoth Strings Are Equal."); 
+ 
+    else 
+        printf("\n\nBoth Strings Are Not Equal.") 
+} 
+   Int main()   {   
+   char str1[20];     
+  char str2[20];   
+   printf("Enter the first string : ");      
+  scanf("%s",str1);   
+   printf("Enter the second string : ");      
+scanf("%s",str2);      
+compare(str1,str2);     
+}
+
